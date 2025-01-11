@@ -110,37 +110,36 @@ def update_metrics(data):
     server_d.set(float(data.get('server', {}).get('d', 0)))
     server_latency.set(float(data.get('server', {}).get('latency', 0)))
 
-    # Client Info
     client_info_data = data.get('client', {})
     client_info.info({
-        'ip_address': client_info_data.get('ip', '0.0.0.0'),
-        'isp': client_info_data.get('isp', 'Unknown'),
-        'latitude': client_info_data.get('lat', '0'),
-        'longitude': client_info_data.get('lon', '0'),
-        'isprating': client_info_data.get('isprating', '0'),
-        'rating': client_info_data.get('rating', '0'),
-        'ispdlavg': client_info_data.get('ispdlavg', '0'),
-        'ispulavg': client_info_data.get('ispulavg', '0'),
-        'loggedin': client_info_data.get('loggedin', '0'),
-        'country': client_info_data.get('country', 'Unknown')
+        'ip_address': str(client_info_data.get('ip', '0.0.0.0')),
+        'isp': str(client_info_data.get('isp', 'Unknown')),
+        'latitude': str(client_info_data.get('lat', '0')),
+        'longitude': str(client_info_data.get('lon', '0')),
+        'isprating': str(client_info_data.get('isprating', '0')),
+        'rating': str(client_info_data.get('rating', '0')),
+        'ispdlavg': str(client_info_data.get('ispdlavg', '0')),
+        'ispulavg': str(client_info_data.get('ispulavg', '0')),
+        'loggedin': str(client_info_data.get('loggedin', '0')),
+        'country': str(client_info_data.get('country', 'Unknown'))
     })
 
-    # Server Info
+    # Server Info – Alle Werte als Strings
     server_data = data.get('server', {})
     server_info.info({
-        'url': server_data.get('url', ''),
-        'lat': server_data.get('lat', ''),
-        'lon': server_data.get('lon', ''),
-        'name': server_data.get('name', ''),
-        'country': server_data.get('country', ''),
-        'cc': server_data.get('cc', ''),
-        'sponsor': server_data.get('sponsor', ''),
-        'id': server_data.get('id', ''),
-        'host': server_data.get('host', ''),
-        'd': server_data.get('d', ''),
-        'latency': server_data.get('latency', '')
+        'url': str(server_data.get('url', '')),
+        'lat': str(server_data.get('lat', '')),
+        'lon': str(server_data.get('lon', '')),
+        'name': str(server_data.get('name', '')),
+        'country': str(server_data.get('country', '')),
+        'cc': str(server_data.get('cc', '')),
+        'sponsor': str(server_data.get('sponsor', '')),
+        'id': str(server_data.get('id', '')),
+        'host': str(server_data.get('host', '')),
+        'd': str(server_data.get('d', '')),
+        'latency': str(server_data.get('latency', ''))
     })
-
+    
 def log_server_info(data):
     """
     Protokolliert Informationen über den verwendeten Server.
