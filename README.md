@@ -26,7 +26,7 @@ Ein Python-basierter Prometheus Exporter, der Internetgeschwindigkeits-Metriken 
 
 1. Repository klonen:
 ```bash
-git clone [repository-url]
+git clone ghcr.io/Xeqt32/speedtest_exporter:latest
 cd speedtest_exporter
 ```
 
@@ -53,7 +53,7 @@ docker run -d \
 
 1. Repository klonen:
 ```bash
-git clone [repository-url]
+git clone ghcr.io/Xeqt32/speedtest_exporter:latest
 cd speedtest_exporter
 ```
 
